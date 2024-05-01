@@ -50,6 +50,7 @@ jobs:
       run: |
         sudo apt update
         sudo apt -y upgrade
+        sudo apt install --reinstall linux-headers-$(uname -r)
         sudo apt install bison flex rsync bison device-tree-compiler bc -y
     # Install repo tool in case it was not yet installed
     - name: Install Repo Tool
