@@ -6,8 +6,8 @@
 properties() { '
 kernel.string=AnyKernel3 (generic) by osm0sis @ xda-developers
 do.devicecheck=0
-do.modules=0
-do.systemless=1
+do.modules=1
+do.systemless=0
 do.cleanup=1
 do.cleanuponabort=0
 '; } # end properties
