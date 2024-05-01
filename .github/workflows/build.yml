@@ -6,7 +6,7 @@ on:
       MANIFEST_URL:
         description: 'Kernel Manifest'
         required: true
-        default: 'https://github.com/cd-Crypton/android_kernel-manifest'
+        default: 'https://github.com/edward0181/android_kernel-manifest'
       MANIFEST_BRANCH:
         description: 'Kernel Manifest Branch'
         required: true
@@ -28,7 +28,7 @@ on:
 jobs:
   build:
     name: Build Kernel by ${{ github.actor }}
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     if: github.event.repository.owner.id == github.event.sender.id
     permissions:
       contents: write
@@ -96,16 +96,17 @@ jobs:
         cd AnyKernel3 && rm -rf anykernel.sh && cd ../..
         mv script/anykernel.sh android/AnyKernel3/ 2>/dev/null
         cp -rf android/kernelbuild/${{ inputs.KERNEL_IMAGE_NAME }} android/AnyKernel3/
-        cp -rf android/modulebuild/* android/AnyKernel3/modules/system/lib/modules/
+        cp -rf android/modulebuild/* android/AnyKernel3/modules/vendor/lib/modules/
+        cp android/AnyKernel3/modules/vendor/lib/modules/wlan.ko android/AnyKernel3/modules/vendor/lib/modules/qca_cld3_wlan.ko
         cd android/AnyKernel3
-        zip -r9 UPDATE-AnyKernel3.zip * -x .git README.md *placeholder
+        zip -r9 SM-A236-KSU.zip * -x .git README.md *placeholder
     # Upload the release, if build is successful
     - name: Upload to Release
       uses: softprops/action-gh-release@v1
       with:
         files: |
           android/kernelbuild/${{ inputs.KERNEL_IMAGE_NAME }}
-          android/AnyKernel3/UPDATE-AnyKernel3.zip
+          android/AnyKernel3/SM-A236-KSU.zip
         name: Android Kernel Release | ${{ github.run_id }}
         tag_name: ${{ github.run_id }}
         body: |
