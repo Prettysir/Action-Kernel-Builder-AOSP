@@ -99,6 +99,9 @@ jobs:
         cd AnyKernel3 && rm -rf anykernel.sh && cd ../..
         mv script/anykernel.sh android/AnyKernel3/ 2>/dev/null
         cp -rf android/kernelbuild/${{ inputs.KERNEL_IMAGE_NAME }} android/AnyKernel3/
+        mkdir android/AnyKernel3/modules/vendor
+        mkdir android/AnyKernel3/modules/vendor/lib
+        mkdir android/AnyKernel3/modules/vendor/lib/modules
         cp -rf android/modulebuild/* android/AnyKernel3/modules/vendor/lib/modules/
         cp android/AnyKernel3/modules/vendor/lib/modules/wlan.ko android/AnyKernel3/modules/vendor/lib/modules/qca_cld3_wlan.ko
         cd android/AnyKernel3
