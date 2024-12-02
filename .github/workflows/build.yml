@@ -6,7 +6,7 @@ on:
       MANIFEST_URL:
         description: 'Kernel Manifest'
         required: true
-        default: 'https://github.com/edward0181/android_kernel_samsung_sm6225-manifest'
+        default: 'https://github.com/edward0181/android_kernel_samsung_a23'
       MANIFEST_BRANCH:
         description: 'Kernel Manifest Branch'
         required: true
