@@ -6,7 +6,7 @@ on:
       MANIFEST_URL:
         description: 'Kernel Manifest'
         required: true
-        default: 'https://github.com/edward0181/android_kernel-manifest'
+        default: 'https://github.com/edward0181/android_kernel_samsung_sm6225-manifest'
       MANIFEST_BRANCH:
         description: 'Kernel Manifest Branch'
         required: true
@@ -14,7 +14,7 @@ on:
       BUILD_CONFIG:
         description: 'Customized build.config file'
         required: true
-        default: 'sm6255/build.config.sm6255'
+        default: 'sm6225/build.config.sm6225'
       KERNEL_IMAGE_NAME:
         description: 'Image, Image.gz, Image.gz-dtb, etc.'
         required: true
