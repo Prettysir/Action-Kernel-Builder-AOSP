@@ -6,11 +6,11 @@ on:
       MANIFEST_URL:
         description: 'Kernel Manifest'
         required: true
-        default: 'https://github.com/edward0181/android_kernel_samsung_a23'
+        default: 'https://github.com/Prettysir/android_kernel-manifest'
       MANIFEST_BRANCH:
         description: 'Kernel Manifest Branch'
         required: true
-        default: 'samsung/sm6255'
+        default: 'samsung/sm6225'
       BUILD_CONFIG:
         description: 'Customized build.config file'
         required: true
